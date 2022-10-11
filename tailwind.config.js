@@ -3,29 +3,37 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  themes: [
-    {
-      mytheme: {
-      
-"primary": "#f23c09",
-      
-"secondary": "#e0fc8a",
-      
-"accent": "#0050ba",
-      
-"neutral": "#3C2A3C",
-      
-"base-100": "#E3E6E8",
-      
-"info": "#3E87CC",
-      
-"success": "#3ADF76",
-      
-"warning": "#F8B763",
-      
-"error": "#E2465B",
-      },
+  themes: {
+    /* screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    }, */
+    colors: {
+      'blue': '#1fb6ff',
+      'purple': '#7e5bef',
+      'pink': '#ff49db',
+      'orange': '#ff7849',
+      'green': '#13ce66',
+      'yellow': '#ffc82c',
+      'gray-dark': '#273444',
+      'gray': '#8492a6',
+      'gray-light': '#d3dce6',
     },
-  ],
+    fontFamily: {
+      sans: ['Graphik', 'sans-serif'],
+      serif: ['Merriweather', 'serif'],
+    },
+    extend: {
+      spacing: {
+        '128': '32rem',
+        '144': '36rem',
+      },
+      borderRadius: {
+        '4xl': '2rem',
+      }
+    }
+  },
   plugins: [require("daisyui")],
 }

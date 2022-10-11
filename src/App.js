@@ -14,12 +14,21 @@ function App() {
   element:<Main></Main>,
   children:[
   {path:'/home', element:<Home></Home>},
-  {path:'/topics', element:<Topics></Topics>},
-  {path: '/Statistics', element:<Statistics></Statistics>},
+  {path:'/topics',
+  loader:()=>{
+    return fetch('https://openapi.programming-hero.com/api/quiz')
+  } ,
+  element:<Topics></Topics>},
+  {path: '/Statistics',
+  loader: () =>{
+
+  },
+  element:<Statistics></Statistics>},
   ]
   },
 
-{path: '/blog', element:<Blog></Blog>}
+{path: '/blog', element:<Blog></Blog>},
+{path:'*', element:<div>This route not found 404!.</div>}
   ])
   return (
     <div className="App">
