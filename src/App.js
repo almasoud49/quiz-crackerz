@@ -14,14 +14,14 @@ function App() {
   element:<Main></Main>,
   children:[
   {path:'/home', element:<Home></Home>},
-  {path:'/topics',
-  loader:()=>{
-    return fetch('https://openapi.programming-hero.com/api/quiz')
+  {path:'/topics/:topicId',
+  loader:({params})=>{
+    return fetch(`https://openapi.programming-hero.com/api/quiz/${params.topicId}`)
   } ,
   element:<Topics></Topics>},
   {path: '/Statistics',
   loader: () =>{
-
+    return fetch('https://openapi.programming-hero.com/api/quiz')
   },
   element:<Statistics></Statistics>},
   ]
