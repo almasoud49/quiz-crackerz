@@ -4,7 +4,7 @@ const Chart = ({chart}) => {
     const {name} = chart;
     return (
         <div>
-            Name:{name}
+            {/* Name:{name} */}
         </div>
     );
 };
