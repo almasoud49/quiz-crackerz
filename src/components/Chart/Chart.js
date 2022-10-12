@@ -1,10 +1,13 @@
 import React from 'react';
 
 const Chart = ({chart}) => {
-    const {name} = chart;
+    const [name, total] = chart();
     return (
         <div>
-            {/* Name:{name} */}
+            {
+                <p>{name}</p>
+                
+            }
         </div>
     );
 };

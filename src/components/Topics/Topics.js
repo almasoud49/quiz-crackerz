@@ -9,7 +9,7 @@ const Topics = () => {
         <div>
             
             {
-                topics.map(topic => <Topic
+                topics.data.map(topic => <Topic
                 key={topic.id}
                 topic={topic}
                 ></Topic>)

@@ -1,4 +1,4 @@
-import {children } from 'react';
+// import {children } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blog from './components/Home/Blog/Blog';
@@ -11,41 +11,30 @@ function App() {
   const router = createBrowserRouter([
   {
   path: '/', 
-  element:<Main></Main>,
-  children:[
-  {path:'/home', element:<Home></Home>},
-  {path:'/topics/:topicId',
-  loader:({params})=>{
-    return fetch(`https://openapi.programming-hero.com/api/quiz/${params.topicId}`)
-  } ,
-  element:<Topics></Topics>},
-  {path: '/Statistics',
-  loader: () =>{
-    return fetch('https://openapi.programming-hero.com/api/quiz')
-  },
-  element:<Statistics></Statistics>},
-  ]
-  },
+  element:<Main></Main>, 
+  children: [
+    {path:'/home', element:<Home></Home>},
+    {path:'/topics', 
+    loader:async()=> {
+      return fetch('https://openapi.programming-hero.com/api/quiz')
+    },
+    element:<Topics></Topics>},
 
-{path: '/blog', element:<Blog></Blog>},
-{path:'*', element:<div>This route not found 404!.</div>}
+    {path: '/Statistics/:id',
+    loader: async({params}) =>{
+      return fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`)
+    },
+    element:<Statistics></Statistics>},
+    {path: '/blog', element:<Blog></Blog>},
+
+  ]},
+  {path:'*', element:<div>This route not found 404!.</div>}
+
   ])
   return (
     <div className="App">
       <RouterProvider router={router}></RouterProvider>
-      {/* <div className="navbar bg-red-400 w-full h-3">
-  <div className="">
-    <a className="btn btn-ghost normal-case text-xl">Quiz Contest</a>
-  </div>
-  <div className="flex bg-green-200">
-    <ul className="menu menu-horizontal p-0">
-      <li><a>Home</a></li>
-      <li><a>Topics</a></li>
-      <li><a>Statistics</a></li>
-      <li><a>Blog</a></li>
-    </ul>
-  </div>
-</div> */}
+      
     </div>
   );
 }

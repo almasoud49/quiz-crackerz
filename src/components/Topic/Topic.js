@@ -5,6 +5,7 @@ const Topic = ({topic}) => {
     return (
         <div>
             Name: {name}
+            Logo: {logo}
             
         </div>
     );
