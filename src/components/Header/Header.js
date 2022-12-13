@@ -5,14 +5,20 @@ const Header = () => {
     return (
         <div>
             <nav>
-            <div className='flex w-full h-15 bg-slate-400 text-white text-3xl'>
-            <p className='mr-auto ml-10 p-8'>Quiz Contest</p>
-            <Link className='mr-5 p-8' to='/home'>Home</Link>
-            <Link className='mr-5 p-8' to='/topics'>Topics</Link>
-            <Link className='mr-5 p-8' to='/statistics'>Statistics</Link>
-            <Link className='mr-10 p-8' to='/blog'>Blog</Link>
+            <div className="navbar bg-gray-200 text-yellow-800 text-2xl">
+            <div className="flex-1">
+            <p className='mr-auto ml-10 '>Quiz Contest</p>
             </div>
-            </nav>
+            <div className="flex-none">
+            <ul className="menu menu-horizontal p-0">
+            <Link className='mr-7 ' to='/home'>Home</Link>
+            <Link className='mr-7 ' to='/topics'>Topics</Link>
+            <Link className='mr-7 ' to='/statistics'>Statistics</Link>
+            <Link className='mr-7 ' to='/blog'>Blog</Link>
+            </ul>
+        </div>
+        </div>
+        </nav>
         </div>
     );
 };
